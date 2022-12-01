@@ -20,16 +20,87 @@ recipeDeleted:
     timestamp:
       $ref: "#/timestamp"
 
-ingridientDeleted:
+ingredientDeleted:
+  allOf:
+    - $ref: "#/ingredient"
+    - $ref: "#/logWithUser"
+
+orderPlaced:
+  allOf:
+    - $ref: "#/order"
+    - $ref: "#/logWithUser"
+
+paymentPaid:
+  allOf:
+    - $ref: "#/payment"
+    - $ref: "#/log"
+
+deliveryOrdered:
+  allOf:
+    - $ref: "#/delivery"
+    - $ref: "#/log"
+
+deliveryRouted:
+  allOf:
+    - $ref: "#/delivery"
+    - $ref: "#/log"
+
+deliveryFinished:
+  allOf:
+    - $ref: "#/delivery"
+    - $ref: "#/log"
+
+ingredient:
   type: object
-  title: ingridientDeleted
+  title: ingredient
   properties:
-    ingridientId:
-      $ref: "#/ingridientId"
-    userId:
-      $ref: "#/actorId"
-    timestamp:
-      $ref: "#/timestamp"
+    ingredientId:
+      $ref: "#/ingredientId"
+
+order:
+  type: object
+  title: order
+  properties:
+    orderId:
+      $ref: "#/orderId"
+    cartItems:
+      type: array
+      items:
+        $ref: "#/cartItem"
+    courierId:
+      $ref: "#/courierId"
+    paymentId:
+      $ref: "#/paymentId"
+
+cartItem:
+  type: object
+  properties:
+    ingredientId:
+      $ref: "#/ingredientId"
+    quantity:
+      type: number
+      description: Quantity
+      examples:
+        - 2
+    price:
+      type: number
+      description: Item price
+      examples:
+        - 2500
+
+payment:
+  type: object
+  properties:
+    paymentId:
+      $ref: "#/paymentId"
+    order:
+      $ref: "#/order"
+
+delivery:
+  type: object
+  properties:
+    order:
+      $ref: "#/order"
 
 nutritionDeleted:
   type: object
@@ -42,33 +113,61 @@ nutritionDeleted:
     timestamp:
       $ref: "#/timestamp"
 
+logWithUser:
+  type: object
+  properties:
+    userId:
+      $ref: "#/actorId"
+    timestamp:
+      $ref: "#/timestamp"
+
+log:
+  type: object
+  properties:
+    timestamp:
+      $ref: "#/timestamp"
+
 actorId:
   type: number
   description: User ID who initiate
   examples:
     - 213
-    - 102
 
 recipeId:
   type: number
-  description: Id of recipe
+  description: Recipe Id
   examples:
-    - 2
     - 39
 
-ingridientId:
+ingredientId:
   type: number
-  description: Id of ingridient
+  description: Ingredient Id
   examples:
     - 19
-    - 290
 
 nutritionId:
   type: number
-  description: Id of nutrition
+  description: Nutrition Id
   examples:
-    - 11
     - 24
+
+orderId:
+  type: number
+  description: Order Id
+  examples:
+    - 23
+
+courierId:
+  type: number
+  description: Courier Id
+  examples:
+    - 3
+
+paymentId:
+  type: number
+  description: Payment Id
+  examples:
+    - 3
 
 timestamp:
   type: string

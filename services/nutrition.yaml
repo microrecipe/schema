@@ -5,11 +5,11 @@ info:
   version: 0.0.1
 
 channels:
-  ingridient.deleted:
-    description: Inform about an ingridient was deleted.
+  ingredient.deleted:
+    description: Inform about an ingredient was deleted.
     publish:
       message:
-        $ref: "../common/messages.yaml#/ingridientDeleted"
+        $ref: "../common/messages.yaml#/ingredientDeleted"
 
   nutrition.deleted:
     description: Inform about a nutrition was deleted.

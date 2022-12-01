@@ -1,0 +1,27 @@
+asyncapi: 2.5.0
+
+info:
+  title: Delivery Service
+  version: 0.0.1
+
+channels:
+  payment.paid:
+    description: Inform about payment of an order has been successfully paid.
+    publish:
+      message:
+        $ref: "../common/messages.yaml#/paymentPaid"
+  delivery.ordered:
+    description: Inform about delivery has been ordered.
+    subscribe:
+      message:
+        $ref: "../common/messages.yaml#/deliveryOrdered"
+  delivery.routed:
+    description: Inform about delivery has been on route.
+    subscribe:
+      message:
+        $ref: "../common/messages.yaml#/deliveryRouted"
+  delivery.finished:
+    description: Inform about delivery has been successfully delivered.
+    subscribe:
+      message:
+        $ref: "../common/messages.yaml#/deliveryFinished"

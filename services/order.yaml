@@ -1,0 +1,27 @@
+asyncapi: 2.5.0
+
+info:
+  title: Order Service
+  version: 0.0.1
+
+channels:
+  order.placed:
+    description: Inform about an order has been placed (check out).
+    subscribe:
+      message:
+        $ref: "../common/messages.yaml#/orderPlaced"
+  delivery.ordered:
+    description: Inform about delivery has been ordered.
+    publish:
+      message:
+        $ref: "../common/messages.yaml#/deliveryOrdered"
+  delivery.routed:
+    description: Inform about delivery has been on route.
+    publish:
+      message:
+        $ref: "../common/messages.yaml#/deliveryRouted"
+  delivery.finished:
+    description: Inform about delivery has been successfully delivered.
+    publish:
+      message:
+        $ref: "../common/messages.yaml#/deliveryFinished"

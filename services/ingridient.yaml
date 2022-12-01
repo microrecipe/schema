@@ -1,7 +1,7 @@
 asyncapi: 2.5.0
 
 info:
-  title: Ingridient Service
+  title: Ingredient Service
   version: 0.0.1
 
 channels:
@@ -11,8 +11,8 @@ channels:
       message:
         $ref: "../common/messages.yaml#/recipeDeleted"
 
-  ingridient.deleted:
-    description: Inform about an ingridient is deleted.
+  ingredient.deleted:
+    description: Inform about an ingredient is deleted.
     subscribe:
       message:
-        $ref: "../common/messages.yaml#/ingridientDeleted"
+        $ref: "../common/messages.yaml#/ingredientDeleted"

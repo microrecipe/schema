@@ -8,12 +8,37 @@ recipeDeleted:
   payload:
     $ref: "./schemas.yaml#/recipeDeleted"
 
-ingridientDeleted:
-  name: ingridientDeleted
+ingredientDeleted:
+  name: ingredientDeleted
   payload:
-    $ref: "./schemas.yaml#/ingridientDeleted"
+    $ref: "./schemas.yaml#/ingredientDeleted"
 
 nutritionDeleted:
   name: nutritionDeleted
   payload:
     $ref: "./schemas.yaml#/nutritionDeleted"
+
+orderPlaced:
+  name: orderPlaced
+  payload:
+    $ref: "./schemas.yaml#/orderPlaced"
+
+paymentPaid:
+  name: paymentPaid
+  payload:
+    $ref: "./schemas.yaml#/paymentPaid"
+
+deliveryOrdered:
+  name: deliveryOrdered
+  payload:
+    $ref: "./schemas.yaml#/deliveryOrdered"
+
+deliveryRouted:
+  name: deliveryRouted
+  payload:
+    $ref: "./schemas.yaml#/deliveryRouted"
+
+deliveryFinished:
+  name: deliveryFinished
+  payload:
+    $ref: "./schemas.yaml#/deliveryFinished"
