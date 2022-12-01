@@ -2,7 +2,8 @@ name: AsyncAPI documents processing
 
 on:
   push:
-    branches: [docs/api/my-asyncapi.yml]
+    branches:
+      - "main"
 
 jobs:
   generate:
