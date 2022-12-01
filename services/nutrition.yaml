@@ -1,0 +1,18 @@
+asyncapi: 2.5.0
+
+info:
+  title: Nutrition Service
+  version: 0.0.1
+
+channels:
+  ingridient.deleted:
+    description: Inform about an ingridient was deleted.
+    publish:
+      message:
+        $ref: "../common/messages.yaml#/ingridientDeleted"
+
+  nutrition.deleted:
+    description: Inform about a nutrition was deleted.
+    subscribe:
+      message:
+        $ref: "../common/messages.yaml#/nutritionDeleted"

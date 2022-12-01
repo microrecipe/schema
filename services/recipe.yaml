@@ -1,0 +1,18 @@
+asyncapi: 2.5.0
+
+info:
+  title: Recipe Service
+  version: 0.0.1
+
+channels:
+  recipe.added:
+    description: Inform about a recipe is added.
+    subscribe:
+      message:
+        $ref: "../common/messages.yaml#/recipeAdded"
+
+  recipe.deleted:
+    description: Inform about a recipe is deleted.
+    subscribe:
+      message:
+        $ref: "../common/messages.yaml#/recipeDeleted"

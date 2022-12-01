@@ -1,0 +1,76 @@
+recipeAdded:
+  type: object
+  title: recipeAdded
+  properties:
+    recipeId:
+      $ref: "#/recipeId"
+    userId:
+      $ref: "#/actorId"
+    timestamp:
+      $ref: "#/timestamp"
+
+recipeDeleted:
+  type: object
+  title: recipeDeleted
+  properties:
+    recipeId:
+      $ref: "#/recipeId"
+    userId:
+      $ref: "#/actorId"
+    timestamp:
+      $ref: "#/timestamp"
+
+ingridientDeleted:
+  type: object
+  title: ingridientDeleted
+  properties:
+    ingridientId:
+      $ref: "#/ingridientId"
+    userId:
+      $ref: "#/actorId"
+    timestamp:
+      $ref: "#/timestamp"
+
+nutritionDeleted:
+  type: object
+  title: nutritionDeleted
+  properties:
+    nutritionId:
+      $ref: "#/nutritionId"
+    userId:
+      $ref: "#/actorId"
+    timestamp:
+      $ref: "#/timestamp"
+
+actorId:
+  type: number
+  description: User ID who initiate
+  examples:
+    - 213
+    - 102
+
+recipeId:
+  type: number
+  description: Id of recipe
+  examples:
+    - 2
+    - 39
+
+ingridientId:
+  type: number
+  description: Id of ingridient
+  examples:
+    - 19
+    - 290
+
+nutritionId:
+  type: number
+  description: Id of nutrition
+  examples:
+    - 11
+    - 24
+
+timestamp:
+  type: string
+  format: date-time
+  description: Date time in ISO 8601 format

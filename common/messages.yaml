@@ -1,0 +1,19 @@
+recipeAdded:
+  name: recipeAdded
+  payload:
+    $ref: "./schemas.yaml#/recipeAdded"
+
+recipeDeleted:
+  name: recipeDeleted
+  payload:
+    $ref: "./schemas.yaml#/recipeDeleted"
+
+ingridientDeleted:
+  name: ingridientDeleted
+  payload:
+    $ref: "./schemas.yaml#/ingridientDeleted"
+
+nutritionDeleted:
+  name: nutritionDeleted
+  payload:
+    $ref: "./schemas.yaml#/nutritionDeleted"
