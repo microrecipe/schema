@@ -1,0 +1,21 @@
+name: AsyncAPI documents processing
+
+on:
+  push:
+    branches: [docs/api/my-asyncapi.yml]
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      #"standard step" where repo needs to be checked-out first
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Generating HTML from my AsyncAPI document
+        uses: docker://asyncapi/github-action-for-generator:2.0.0
+        with:
+          template: "@asyncapi/html-template@0.28.1" #In case of template from npm, because of @ it must be in quotes
+          filepath: services/recipe.yml
+          # parameters: baseHref=/test-experiment/ sidebarOrganization=byTags #space separated list of key/values
+          output: recipe
