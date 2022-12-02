@@ -15,8 +15,3 @@ channels:
     publish:
       message:
         $ref: "../common/messages.yaml#/orderPlaced"
-  delivery.finished:
-    description: Inform about delivery has been successfully delivered.
-    publish:
-      message:
-        $ref: "../common/messages.yaml#/deliveryFinished"

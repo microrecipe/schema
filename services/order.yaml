@@ -10,6 +10,11 @@ channels:
     subscribe:
       message:
         $ref: "../common/messages.yaml#/orderPlaced"
+  payment.paid:
+    description: Inform about payment of an order has been successfully paid.
+    publish:
+      message:
+        $ref: "../common/messages.yaml#/paymentPaid"
   delivery.ordered:
     description: Inform about delivery has been ordered.
     publish:
